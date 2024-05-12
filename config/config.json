@@ -1,0 +1,35 @@
+{
+    "database": {
+      "type": "sqlite",
+      "path": "data/location_data.db"
+    },
+    "logging": {
+      "level": "INFO",
+      "format": "[%(asctime)s] [%(levelname)s] %(message)s",
+      "file": "logs/location_tracker.log"
+    },
+    "api": {
+      "host": "localhost",
+      "port": 8080,
+      "authentication": true,
+      "api_key": "your_api_key_here"
+    },
+    "tracking": {
+      "gps": {
+        "enabled": true,
+        "update_interval": 60,
+        "accuracy_threshold": 10
+      },
+      "wifi": {
+        "enabled": true,
+        "scan_interval": 300,
+        "min_signal_strength": -70
+      },
+      "bluetooth": {
+        "enabled": false,
+        "scan_interval": 600,
+        "discoverable": false
+      }
+    }
+  }
+  

@@ -1,0 +1,43 @@
+import sqlite3
+
+# Connect to the SQLite database
+conn = sqlite3.connect('location_data.db')
+cursor = conn.cursor()
+
+# Create tables
+cursor.execute('''
+CREATE TABLE IF NOT EXISTS devices (
+    id INTEGER PRIMARY KEY,
+    name TEXT NOT NULL
+)
+''')
+
+cursor.execute('''
+CREATE TABLE IF NOT EXISTS locations (
+    id INTEGER PRIMARY KEY,
+    device_id INTEGER NOT NULL,
+    latitude REAL NOT NULL,
+    longitude REAL NOT NULL,
+    timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY(device_id) REFERENCES devices(id)
+)
+''')
+
+# Insert sample data
+cursor.execute('''
+INSERT INTO devices (name) VALUES
+    ('Device 1'),
+    ('Device 2')
+''')
+
+cursor.execute('''
+INSERT INTO locations (device_id, latitude, longitude) VALUES
+    (1, 37.7749, -122.4194),
+    (2, 40.7128, -74.0060)
+''')
+
+# Commit changes and close connection
+conn.commit()
+conn.close()
+
+print("Database created successfully.")
