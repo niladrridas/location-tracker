@@ -40,15 +40,15 @@ The Location Tracker project is a Python-based application designed to track the
 
 1. Clone the repository:
 
-\\\
+```
 git clone https://github.com/niladrridas/location-tracker.git
-\\\
+```
 
 2. Install dependencies:
 
-\\\
+```
 pip install -r requirements.txt
-\\\
+```
 
 3. Configure the application by editing `config/config.json` file.
 
@@ -56,9 +56,9 @@ pip install -r requirements.txt
 
 1. Start the Location Tracker application:
 
-\\\
+```
 python src/main.py
-\\\
+```
 
 2. Access the application through the provided API endpoints or user interface.
 
@@ -88,7 +88,7 @@ We welcome contributions from the community! To contribute to the Location Track
 
 ## License
 
-This project is licensed under the [MIT License](LICENSE).
+This project is licensed under the [MIT License](https://github.com/niladrridas/location-tracker/blob/main/README.md).
 
 ---
 
